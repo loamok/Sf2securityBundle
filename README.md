@@ -48,7 +48,7 @@ Composer.json :
 ```
     "require": {
         [...],
-        "Loamok/Sf2securityBundle": "dev-master"
+        "loamok/sf2security-bundle": "dev-master"
 ```
 
 And run composer update.
@@ -82,7 +82,7 @@ Mod your security config file
 Create a symbolic link from filter conf file to /etc/fail2ban/filter :
 
 ```
-$ sudo ln -s /var/www/appName/vendor/Loamok/Sf2securityBundle/Loamok/Sf2securityBundle/Resources/filter/sf2security.conf /etc/fail2ban/filter/sf2security.conf
+$ sudo ln -s /var/www/appName/vendor/loamok/sf2security-bundle/Loamok/Sf2securityBundle/Resources/filter/sf2security.conf /etc/fail2ban/filter/sf2security.conf
 ```
 
 Add the jail definition for fail2ban (/etc/fail2ban/jail.conf) (sample is in the filter file) :
