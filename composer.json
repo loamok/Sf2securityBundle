@@ -1,5 +1,5 @@
 {
-    "name" : "Loamok/Sf2securitybundle",
+    "name" : "Loamok/Sf2securityBundle",
     "description" : "A bundle for plug symfony with fail2ban security application",
     "type" : "symfony-bundle",
     "authors" : [{
