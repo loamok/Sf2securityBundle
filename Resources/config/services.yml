@@ -1,4 +1,5 @@
-sf2securitybundle.authenticationfailurehandler:
+services:
+    sf2security.authenticationfailurehandler:
         class: Loamok\Sf2securityBundle\EventHandler\AuthenticationFailureHandler
         arguments: ["@http_kernel", "@security.http_utils", {}, "@logger"]
         tags:
