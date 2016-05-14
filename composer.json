@@ -1,0 +1,25 @@
+{
+    "name" : "Loamok/Sf2securitybundle",
+    "description" : "A bundle for plug symfony with fail2ban security application",
+    "type" : "symfony-bundle",
+    "authors" : [{
+        "name" : "Huby Franck",
+        "email" : "franck.huby@loamok.org"
+    }],
+    "keywords" : [
+        "security", "fail2ban", "symfony2"
+    ],
+    "license" : [
+        "GNU LESSER GPL V3.0"
+    ],
+    "require" : {
+    },
+    "autoload" : {
+        "psr-0" : {
+            "Loamok\\Sf2securityBundle" : ""
+        }
+    },
+    "target-dir" : "Loamok/Sf2securityBundle",
+    "repositories" : [{
+    }]
+}
