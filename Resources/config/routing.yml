@@ -1,3 +1,0 @@
-sf2security_homepage:
-    path:     /
-    defaults: { _controller: Sf2securityBundle:Default:index }

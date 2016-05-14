@@ -1,4 +1,5 @@
-services:
-#    sf2security.example:
-#        class: Loamok\Sf2securityBundle\Example
-#        arguments: ["@service_id", "plain_value", %parameter%]
+sf2securitybundle.authenticationfailurehandler:
+        class: Loamok\Sf2securityBundle\EventHandler\AuthenticationFailureHandler
+        arguments: ["@http_kernel", "@security.http_utils", {}, "@logger"]
+        tags:
+            - { name: 'monolog.logger', channel: 'security' }
