@@ -2,7 +2,7 @@
 
 Inspired from https://inuits.eu/blog/getting-fail2ban-work-symfony2-proper-way
 
-Thak you Kalman Olah for the great article.
+Thank you Kalman Olah for the great article.
 
 A bundle for plug symfony to linux fail2ban security application
 
