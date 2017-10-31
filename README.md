@@ -6,12 +6,37 @@ Thank you Kalman Olah for the great article.
 
 A bundle for plug symfony to linux fail2ban security application
 
+## Important note about revisions :
+
+Revision 2 is for Symfony 2.x
+Revision 3 is for Symfony 3.x
+Revision 3 is merged in dev-master and in develop
+
+So if you are using Symfony 2.8 you must use revision 2 of this bundle.
+
+## Important note about revisions :
+
+Migration from sf 2.8 to sf 3.3 :
+
+In all cases : 
+-
+ - remove the line "csrf_provider: form.csrf_provider" from security.yml
+
+If you have moved your log files to var/logs instead of app/logs you must :
+-
+1. upgrade to revision 3 or dev-master
+2. adapt your logrotate scripts according to this documentation
+3. adapt your fail2ban documentation
+
+If you haven't moved your log files and still let them in app/logs yopu have nothing to do.
+Eventually upgrade this bundle to revision 2 to ensure you dont go to 3 by error.
+
 ## First step rotate the logs
 
 Start by configuring log rotate on your web server.
 
 What you need :
-
+-
 1. Full path of your application logs
 2. System webserver username
 3. Root or sudo access
@@ -26,7 +51,7 @@ $ sudo vim /etc/logrotate.d/sf2-appName
 Write this in your new file (substitute with good values) :
 
 ```
-/var/www/appName/app/logs/prod.log {
+/var/www/appName/var/logs/prod.log {
         su www-data www-data
         daily
         missingok
@@ -48,7 +73,7 @@ Composer.json :
 ```
     "require": {
         [...],
-        "loamok/sf2security-bundle": "dev-master"
+        "loamok/sf2security-bundle": "^3"
 ```
 
 And run composer update.
@@ -71,7 +96,6 @@ Mod your security config file
             pattern: ^/
             form_login:
                 provider: fos_userbundle
-                csrf_provider: form.csrf_provider
                 failure_handler: sf2security.authenticationfailurehandler
             logout:       true
             anonymous:    true
@@ -91,7 +115,7 @@ Add the jail definition for fail2ban (/etc/fail2ban/jail.conf) (sample is in the
 [sf2security]
 enabled   = true
 filter    = sf2security
-logpath   = /var/www/appName/app/logs/prod.log
+logpath   = /var/www/appName/var/logs/prod.log
 port      = http,https
 bantime   = 600
 banaction = iptables-multiport
