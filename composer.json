@@ -10,7 +10,7 @@
         "security", "fail2ban", "symfony2"
     ],
     "license" : [
-        "GNU LESSER GPL V3.0"
+        "LGPL-3.0"
     ],
     "require" : {
     },
