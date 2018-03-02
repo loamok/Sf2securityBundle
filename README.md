@@ -1,10 +1,8 @@
 # Loamok Symfony 2 Security Bundle
 
-Inspired from https://inuits.eu/blog/getting-fail2ban-work-symfony2-proper-way
+A bundle to get the [fail2ban](https://www.fail2ban.org) security application to work with Symfony2 the proper way.
 
-Thank you Kalman Olah for the great article.
-
-A bundle for plug symfony to linux fail2ban security application
+Inspired from https://kalmanolah.net/getting-fail2ban-to-work-with-symfony2-the-proper-way.html. Thank you Kalman Olah for the great article.
 
 ## Important note about revisions :
 
